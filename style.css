@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+* {
+    box-sizing: border-box;
+    --base-white: hsl(0, 0%, 100%);
+    color: var(--base-white);
+    font-family: 'Outfit', sans-serif;
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --cyan-cover: rgba(0, 255, 247, 0.5);
+    --dark-blue-bg: hsl(217, 54%, 11%);
+    --dark-blue-card: hsl(216, 50%, 16%);
+    --blue-line: hsl(215, 32%, 27%);
+    --margin-var: 1.5625rem;
+    --card-width: 21.875rem;
+    --card-height: 37.5rem;
+    --image-dimension: 19.0625rem;
+    --avatar-dimension: 1.875rem;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-blue-bg);
+}
+
+
+/* Card */
+
+.__card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: var(--dark-blue-card);
+    width: var(--card-width);
+    height: var(--card-height);
+    border-radius: 0.625rem;
+    box-shadow: 0 1.0625rem 0.3125rem 0.875rem hsl(217, 54%, 10%);
+}
+
+
+/* Product Image */
+
+.__image {
+    margin-top: 0.45rem;
+}
+
+.__image .__prod-image {
+    width: var(--image-dimension);
+    height: var(--image-dimension);
+    border-radius: 0.3125rem;
+    background: url("./images/image-equilibrium.jpg") center/cover no-repeat;
+}
+
+.__image:hover .__prod-image::before {
+    content: url("./images/icon-view.svg");
+    background: var(--cyan-cover);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3125rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+/* Product Info */
+
+.__product-info {
+    margin: 0 var(--margin-var);
+}
+
+.__product-info .__nft-prod-title .__prod-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.__select-hover:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.__product-info .__nft-prod-description .__prod-description {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--soft-blue);
+    margin-bottom: 0;
+}
+
+
+/* Product Data */
+
+.__product-data {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 var(--margin-var);
+    padding: 0 var(--margin-var);
+}
+
+.__product-data .__prod-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.__product-data .__prod-data .__product-cur-symbol,
+.__product-data .__prod-data .__prod-data-value {
+    font-weight: 600;
+    color: var(--cyan);
+}
+
+.__product-data .__prod-data .__creator-time-symbol,
+.__product-data .__prod-data .__prod-time-left {
+    font-weight: 300;
+    color: var(--soft-blue);
+}
+
+
+/* Line */
+
+hr {
+    width: 88%;
+    padding: 0 var(--margin-var);
+    height: 0.03rem;
+    background-color: var(--blue-line);
+    border: none;
+}
+
+
+/* Creator Data */
+
+.__creator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 var(--margin-var);
+    width: 100%;
+}
+
+.__creator .__creator-avatar {
+    width: var(--avatar-dimension);
+    height: var(--avatar-dimension);
+    border-radius: 50%;
+    border: 1px solid var(--base-white);
+    margin-right: 0.625rem;
+}
+
+.__creator .__creator-name-value {
+    margin-left: 0.3rem;
+}
